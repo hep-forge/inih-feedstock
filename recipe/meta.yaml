@@ -22,8 +22,7 @@ requirements:
     - {{ compiler('c') }}   # [linux]
     - {{ stdlib('c') }}
 
-    - cmake
-    - make
+    - meson
 
 about:
   home: "https://github.com/benhoyt/inih"
