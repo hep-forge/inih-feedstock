@@ -1,0 +1,37 @@
+{% set versions = {
+    "r60": "706aa05c888b53bd170e5d8aa8f8a9d9ccf5449dfed262d5103d1f292af26774"
+} %}
+
+{% set version = environ.get('COMMIT_VERSION', None) %}
+{% set version = version or versions.keys()|first %}
+{% set version = version|string %}
+
+package:
+  name: {{ environ.get('ANACONDA_PACKAGE', 'ininh')|string|lower }}
+  version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
+
+source:
+  url: "https://github.com/benhoyt/inih/archive/refs/tags/{{version}}.tar.gz"
+  {% if versions.get(version, None) %}
+  sha256: {{ versions.get(version) }}
+  {% endif %}
+
+requirements:
+  build:
+    - {{ compiler('cxx') }} # [linux]
+    - {{ compiler('c') }}   # [linux]
+    - {{ stdlib('c') }}
+
+    - cmake
+    - make
+
+about:
+  home: "https://github.com/benhoyt/inih"
+  license: "BSD"
+  summary: "Simple .INI file parser in C, good for embedded systems"
+  description: |
+    inih (INI Not Invented Here) is a simple .INI file parser written in C. It's only a couple of pages of code, and it was designed to be small and simple, so it's good for embedded systems.
+
+extra:
+  recipe-maintainers:
+    - meiyasan
