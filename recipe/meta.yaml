@@ -29,8 +29,6 @@ requirements:
     - meson
 
   host:
-    - {{ compiler('c') }}{{ gnu_host_pin }}    # [linux]
-    - {{ compiler('cxx') }}{{ gnu_host_pin }}  # [linux]
     - libstdcxx-ng{{gnu_host_pin}}
     - {{ stdlib('c') }}
 
