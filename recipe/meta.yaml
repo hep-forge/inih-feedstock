@@ -16,13 +16,23 @@ source:
   sha256: {{ versions.get(version) }}
   {% endif %}
 
+{% set gnu_build_pin = " 14.*" %}
+{% set gnu_host_pin   = " >=14" %}
+
 requirements:
   build:
-#    - {{ compiler('cxx') }} # [linux]
-    - {{ compiler('c') }}   # [linux]
+    - {{ compiler('c') }}{{ gnu_build_pin }}    # [linux]
+    - {{ compiler('cxx') }}{{ gnu_build_pin }}  # [linux]
+    - libstdcxx-ng{{gnu_build_pin}}
     - {{ stdlib('c') }}
 
     - meson
+
+  host:
+    - {{ compiler('c') }}{{ gnu_host_pin }}    # [linux]
+    - {{ compiler('cxx') }}{{ gnu_host_pin }}  # [linux]
+    - libstdcxx-ng{{gnu_host_pin}}
+    - {{ stdlib('c') }}
 
 about:
   home: "https://github.com/benhoyt/inih"
