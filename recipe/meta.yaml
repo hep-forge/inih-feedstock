@@ -23,9 +23,6 @@ requirements:
     - {{ stdlib('c') }}
     - meson
 
-  host:
-    - {{ stdlib('c') }}
-
 about:
   home: "https://github.com/benhoyt/inih"
   license: "BSD"
