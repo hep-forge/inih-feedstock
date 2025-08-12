@@ -16,20 +16,14 @@ source:
   sha256: {{ versions.get(version) }}
   {% endif %}
 
-{% set gnu_build_pin = " 14.*" %}
-{% set gnu_host_pin   = " >=14" %}
-
 requirements:
   build:
-    - {{ compiler('c') }}{{ gnu_build_pin }}    # [linux]
-    - {{ compiler('cxx') }}{{ gnu_build_pin }}  # [linux]
-    - libstdcxx-ng{{gnu_build_pin}}
+    - {{ compiler('c') }}   # [linux]
+    - {{ compiler('cxx') }}  # [linux]
     - {{ stdlib('c') }}
-
     - meson
 
   host:
-    - libstdcxx-ng{{gnu_host_pin}}
     - {{ stdlib('c') }}
 
 about:
