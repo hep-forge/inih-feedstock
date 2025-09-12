@@ -1,32 +1,27 @@
-# === Compilers (Linux) ===
-c_compiler:            # [linux]
+c_compiler:
   - gcc
-cxx_compiler:          # [linux]
+cxx_compiler:
   - gxx
-fortran_compiler:      # [linux]
+fortran_compiler:
   - gfortran
 
-c_compiler_version:    # [linux]
-  - 5
-cxx_compiler_version:  # [linux]
-  - 5
-fortran_compiler_version:  # [linux]
-  - 5
+c_compiler_version:  
+  - 5 # [linux]
+cxx_compiler_version:
+  - 5 # [linux]
+fortran_compiler_version:
+  - 5 # [linux]
 
-# === C stdlib baseline (ABI floor) ===
 c_stdlib:
-  - sysroot                  # [linux]
+  - sysroot # [linux]
   - macosx_deployment_target # [osx]
 
-# macOS min runtime
-macosx_deployment_target:   # [osx]
-  - 12.0
+macosx_deployment_target:   
+  - 12.0 # [osx]
 
-# === Pin Linux runtimes to the SAME minor as compiler ===
-# These variant pins ensure your build links against exactly 15.1.*
-libgcc-ng:     # [linux]
-  - 5.*
-libstdcxx-ng:  # [linux]
-  - 5.*
-libgomp:       # [linux]
-  - 5.*
+libgcc-ng:   
+  - 5.* # [linux]
+libstdcxx-ng:
+  - 5.* # [linux]
+libgomp:     
+  - 5.* # [linux]
