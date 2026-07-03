@@ -15,8 +15,8 @@ Simple .INI file parser in C, good for embedded systems
 
 | Architecture | Latest published |
 |--------------|------------------|
-| linux-amd64 (`linux-64`) | ✅ `r60` |
-| linux-arm64 (`linux-aarch64`) | ❌ not published |
+| linux-amd64 (`linux-64`) | ✅ `r60.dev` |
+| linux-arm64 (`linux-aarch64`) | ✅ `r60.dev` |
 
 _As of the last feedstock render; the badges above are live._
 
