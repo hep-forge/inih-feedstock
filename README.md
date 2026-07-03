@@ -1,5 +1,6 @@
 # inih-feedstock
 
+[![hep-forge](https://img.shields.io/badge/package-hep--forge%2Finih-orange.svg)](https://anaconda.org/hep-forge/inih)
 [![Build & Upload](https://github.com/hep-forge/inih-feedstock/actions/workflows/autoupload.yml/badge.svg)](https://github.com/hep-forge/inih-feedstock/actions/workflows/autoupload.yml)
 [![Anaconda Version](https://anaconda.org/hep-forge/inih/badges/version.svg)](https://anaconda.org/hep-forge/inih)
 [![Anaconda Platforms](https://anaconda.org/hep-forge/inih/badges/platforms.svg)](https://anaconda.org/hep-forge/inih)
@@ -9,6 +10,16 @@ Builds linux-amd64 + linux-arm64 in one matrix workflow and uploads to the
 [hep-forge](https://anaconda.org/hep-forge) Anaconda channel.
 
 Simple .INI file parser in C, good for embedded systems
+
+## Architectures
+
+| Architecture | Latest published |
+|--------------|------------------|
+| linux-amd64 (`linux-64`) | ✅ `r60` |
+| linux-arm64 (`linux-aarch64`) | ❌ not published |
+
+_As of the last feedstock render; the badges above are live._
+
 
 ## Install
 
