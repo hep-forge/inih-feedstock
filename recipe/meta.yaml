@@ -19,9 +19,11 @@ source:
   {% endif %}
 
 
-build:
-  run_exports:
-    - {{ pin_subpackage(name, max_pin="x.x.x") }}
+# No build.run_exports: pin_subpackage's max_pin logic expects a numeric
+# X.Y.Z version and mangles upstream's "r60"-style tags into garbage
+# constraints (e.g. ">=0r.60,<0r.61.0a0") for every consumer. inih is a
+# stable single-header parser with no real cross-version ABI breakage,
+# so consumers are fine depending on any inih build.
 
 requirements:
   build:
